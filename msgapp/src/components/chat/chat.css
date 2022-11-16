@@ -15,7 +15,24 @@
 .header {
   background-color: red;
   height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.header > h2 {
+  margin: 1.5vmax;
+}
+.header > a > i {
+  margin: 1.5vmax;
+  font-size: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: white;
+}
+.header > a > i:hover {
+  transform: scale(1.5);
+}
+
 .chat-box {
   height: 75%;
   border: 2px solid black;

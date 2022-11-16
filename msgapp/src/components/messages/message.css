@@ -10,9 +10,11 @@
   background-color: crimson;
   float: right;
   color: white;
+  border-radius: 15px 0px 15px 15px;
 }
 .left {
-  background-color: rgb(43, 204, 96);
+  background-color: #3fd8bc;
   float: left;
   color: white;
+  border-radius: 0px 15px 15px 15px;
 }

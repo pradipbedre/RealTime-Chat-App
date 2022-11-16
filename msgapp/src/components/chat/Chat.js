@@ -19,7 +19,8 @@ const Chat = () => {
     socket.emit("message", { message, userid });
     document.getElementById("chat-input").value = null;
   };
-  console.log(messages);
+  /*  console.log(messages);
+  console.log(userid); */
 
   useEffect(() => {
     socket = socketIO(ENDPOINT, { transports: ["websocket"] });
@@ -32,20 +33,20 @@ const Chat = () => {
 
     // user receive message
     socket.on("welcome", (data) => {
-      console.log(data.user, data.message);
       setMessage([...messages, data]);
+      console.log(data.user, data.message);
     });
 
     // when user join
     socket.on("userjoined", (data) => {
-      console.log(data.user, data.message);
       setMessage([...messages, data]);
+      console.log(data.user, data.message);
     });
 
     // when user leave
     socket.on("leave", (data) => {
-      console.log(data.user, data.message);
       setMessage([...messages, data]);
+      console.log(data.user, data.message);
     });
 
     return () => {
@@ -61,7 +62,6 @@ const Chat = () => {
     });
 
     return () => {
-      //
       socket.off();
     };
   }, [messages]);
@@ -69,13 +69,17 @@ const Chat = () => {
   return (
     <div className="chat-page">
       <div className="chat-container">
-        <div className="header"></div>
+        <div className="header">
+          <h2>Buddy Chat</h2>
+          <a href="/"> <i class="fa-solid fa-xmark"/></a>
+         
+        </div>
         <ReactScrollToBottom className="chat-box">
-          {messages.map((item, index) => (
+          {messages.map((item) => (
             <Message
-              user={item.id === userid ? "" : item.user}
+              user={item.userid === userid ? "" : item.user}
               message={item.message}
-              classs={item.id === userid ? "right" : "left"}
+              classs={item.userid === userid ? "right" : "left"}
             />
           ))}
         </ReactScrollToBottom>
