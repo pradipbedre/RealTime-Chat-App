@@ -71,8 +71,10 @@ const Chat = () => {
       <div className="chat-container">
         <div className="header">
           <h2>Buddy Chat</h2>
-          <a href="/"> <i class="fa-solid fa-xmark"/></a>
-         
+          <a href="/">
+            {" "}
+            <i class="fa-solid fa-xmark" />
+          </a>
         </div>
         <ReactScrollToBottom className="chat-box">
           {messages.map((item) => (
@@ -84,7 +86,11 @@ const Chat = () => {
           ))}
         </ReactScrollToBottom>
         <div className="input-box">
-          <input type="text" id="chat-input" />
+          <input
+            onKeyDown={(e) => (e.key === "Enter" ? send() : null)}
+            type="text"
+            id="chat-input"
+          />
           <button className="send-btn" onClick={send}>
             <img src={sendbtn} alt="sendbutton" />
           </button>
