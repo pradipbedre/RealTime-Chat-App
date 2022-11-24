@@ -5,6 +5,8 @@ import sendbtn from "../../images/sendbtn.png";
 import "./chat.css";
 import Message from "../messages/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom";
+import sentMusic from "../../music/sent.mp3";
+import receiveMusic from "../../music/receive.mp3";
 
 const ENDPOINT = "http://localhost:2000/";
 let socket;
@@ -13,14 +15,17 @@ const Chat = () => {
   const [userid, setId] = useState("");
   const [messages, setMessage] = useState([]);
 
+  // Musics
+  const audioSent = new Audio(sentMusic);
+  const audioReceive = new Audio(receiveMusic);
+
   // send message to to server when button is clicked
   const send = () => {
+    audioSent.play();
     const message = document.getElementById("chat-input").value;
     socket.emit("message", { message, userid });
     document.getElementById("chat-input").value = null;
   };
-  /*  console.log(messages);
-  console.log(userid); */
 
   useEffect(() => {
     socket = socketIO(ENDPOINT, { transports: ["websocket"] });
@@ -28,39 +33,27 @@ const Chat = () => {
       alert("You Connect");
       setId(socket.id);
     });
+
     // when user joined
     socket.emit("joined", { user });
 
     // user receive message
     socket.on("welcome", (data) => {
+      audioReceive.play();
       setMessage([...messages, data]);
-      console.log(data.user, data.message);
-    });
-
-    // when user join
-    socket.on("userjoined", (data) => {
-      setMessage([...messages, data]);
-      console.log(data.user, data.message);
-    });
-
-    // when user leave
-    socket.on("leave", (data) => {
-      setMessage([...messages, data]);
-      console.log(data.user, data.message);
+      console.log(messages);
     });
 
     return () => {
-      socket.emit("disconnect");
       socket.off();
     };
   }, []);
 
   useEffect(() => {
     socket.on("sendMsg", (data) => {
+      //audioReceive.play();
       setMessage([...messages, data]);
-      console.log(data.user, data.message, data.userid);
     });
-
     return () => {
       socket.off();
     };
@@ -72,8 +65,7 @@ const Chat = () => {
         <div className="header">
           <h2>Buddy Chat</h2>
           <a href="/">
-            {" "}
-            <i class="fa-solid fa-xmark" />
+            <i className="fa-solid fa-xmark" />
           </a>
         </div>
         <ReactScrollToBottom className="chat-box">
