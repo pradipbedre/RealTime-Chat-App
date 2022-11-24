@@ -1,7 +1,9 @@
 # Real-Time-Chat-App
-## https://pradip-chatapp.netlify.app/
+## Frontend: https://pradip-chatapp.netlify.app/
+## Backend: https://chatappbackend.onrender.com/
 
 ## How To Use Our App
+1. Just Click on https://pradip-chatapp.netlify.app/
 1. Just Enter Name And Login
 ![chrome_cQZCC0Jp1l](https://user-images.githubusercontent.com/60803643/203852605-d4e4df5d-273b-4d7b-8159-f50d319f9a96.png)
 
