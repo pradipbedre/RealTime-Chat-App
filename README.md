@@ -19,7 +19,7 @@
 
 
 ## Tech Used
-I Created a Realtime Chat Application Using React, NodeJs and SocketIO
+I Created a Realtime Chat Application Using React CSS, Node.Js, Express.Js, and SocketIO
 
 
 
