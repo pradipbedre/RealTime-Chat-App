@@ -3,7 +3,7 @@
 ## Frontend: https://pradip-chatapp.netlify.app/
 ## Backend: https://chatappbackend.onrender.com/
 
-## How To Use Our App
+## How To Use Chat App
 1. Just Click on https://pradip-chatapp.netlify.app/
 
 1. Just Enter Name And Login
