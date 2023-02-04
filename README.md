@@ -9,7 +9,7 @@
 1. Just Enter Name And Login
 ![chrome_cQZCC0Jp1l](https://user-images.githubusercontent.com/60803643/203852605-d4e4df5d-273b-4d7b-8159-f50d319f9a96.png)
 
-2. Tell Your Friend To Join 
+2. Tell your friend to join in.
 
 3. You can start chatting now
 
