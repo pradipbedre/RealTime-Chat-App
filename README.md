@@ -1,7 +1,7 @@
 # Real Time Chat App Using Sockets 
 ## Click here
 ### Frontend: https://pradip-chatapp.netlify.app/
-### Backend Deployment: https://chatappbackend.onrender.com/
+### Backend : https://chatappbackend.onrender.com/
 
 ## How To Use Chat App
 1. Just Click on https://pradip-chatapp.netlify.app/
